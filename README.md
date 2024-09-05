@@ -80,5 +80,5 @@ confusionchart(adsTest.Labels,r2,title="Test Accuracy (Per File)", ...
 ![perfile](https://github.com/user-attachments/assets/93cc6dbe-0013-4bbb-88a7-55a05f2a2fcc)
 Gracias a esto podemos deducir que el modelo funciona y es preciso la mayoría de las veces
 ## Aplicación
-La interfaz cuenta con un botón de grabado de audio, una caja que muestra el mensaje "Grabando.." y "Fin de la grabación", un botón para activar el modelo y que prediga quién es la persona que habló y su respectiva caja de texto para mostrar el resultado.
+La interfaz cuenta con un botón de grabado de audio, una caja que muestra el mensaje "Grabando..." y "Fin de la grabación", un botón para activar el modelo y que prediga quién es la persona que habló y su respectiva caja de texto para mostrar el resultado.
 ![Imagen de WhatsApp 2024-09-02 a las 22 31 01_6448021e](https://github.com/user-attachments/assets/1a3ecc18-44ff-44a5-b068-e441f46b0949)
