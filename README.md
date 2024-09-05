@@ -24,7 +24,7 @@ audio001 = getaudiodata(recObj);
 % se grafica el arreglo
 plot(audio001);
 ```
-Posteriormente, utilizando matlab, aumento cada audio para tener un total de 110 audios por persona y con estos entrenar el modelo
+Posteriormente, utilizando matlab, se aumentaron cada audio para tener un total de 110 audios por persona y con estos entrenar el modelo
 ### Creación del Dataset y extracción de features
 Para la creación del dataset se extrajeron todos los audios de cada alumno que se encontraban en su propia carpeta, una vez almacenados en el data set se seaparaon para que el 80% de los datos sirvieran para entrenar al modelo y el 20% para las pruebas.
 Posteriormente, se ralizó la extracción de features con un energyThreshold = 0.02 y un zcrThreshold = 0.3. Después de que se obtuvieran los fetures de todos los archivos, se ubtuvieorn la media y desviación estándar.
