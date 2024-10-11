@@ -8,7 +8,7 @@ Desarrollar un programa computacional que analice la voz de las y los estudiante
 ## Etapas
 ### Grabación de audios
 Primeramente, se grabaron 10 audios por cada alumno diciendo la palabra "Cerebot".
-```
+```matlab
 % se graban 3 segundos de audio
 recObj = audiorecorder;
 disp('Grabando ...');
@@ -30,7 +30,7 @@ Para la creación del dataset se extrajeron todos los audios de cada alumno que 
 Posteriormente, se ralizó la extracción de features con un energyThreshold = 0.02 y un zcrThreshold = 0.3. Después de que se obtuvieran los fetures de todos los archivos, se ubtuvieorn la media y desviación estándar.
 ### Modelo knn
 El modelo knn (o de número de vecinos) es un clasificador de aprendizaje supervisado no paramétrico, que utiliza la proximidad para hacer clasificaciones o predicciones sobre la agrupación de un punto de datos individual. Para nuestro modelo se utilizo una k = 10;
-```
+```matlab
 trainedClassifier = fitcknn(features,labels, ...
     Distance="euclidean", ...
     NumNeighbors=5, ...
@@ -46,7 +46,7 @@ fprintf('\nValidation accuracy = %.2f%%\n', validationAccuracy*100);
 ```
 Esto nos da una precisión de validación: 98.42% </br>
 A continuación se presenta la matriz de confusión correspondiente:
-```
+```matlab
 validationPredictions = kfoldPredict(partitionedModel);
 figure(Units="normalized",Position=[0.4 0.4 0.4 0.4])
 confusionchart(labels,validationPredictions,title="Validation Accuracy", ...
@@ -55,7 +55,7 @@ confusionchart(labels,validationPredictions,title="Validation Accuracy", ...
 ![accuracy](https://github.com/user-attachments/assets/7aa21282-16b3-4587-812a-693ba98475c8)
 ### Prueba del modelo
 Para porbar su veracidad se utilizaron el 20% de los datos restantes y se graficaron en dos matriz de confusión, per frame
-```
+```matlab
 features = (features-M)./S;
 prediction = predict(trainedClassifier,features);
 prediction = categorical(string(prediction));
@@ -65,7 +65,7 @@ confusionchart(labels(:),prediction,title="Test Accuracy (Per Frame)", ...
 ```
 ![perframe](https://github.com/user-attachments/assets/f0bd7f2a-ffd7-43a4-9eaa-253cfc42e2da)
 Y por archivo
-```
+```matlab
 r2 = prediction(1:numel(adsTest.Files));
 idx = 1;
 for ii = 1:numel(adsTest.Files)
